@@ -12,8 +12,31 @@
       <mt-swipe-item><img src="../../images/slideshow/lunbo3.jpg" alt=""></mt-swipe-item>
     </mt-swipe>
 
+    <!-- 九宫格布局 -->
+    <ul class="mui-table-view mui-grid-view mui-grid-9">
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+        <router-link to="/home/goodsList">
+          <img src="../../images/cart.png" alt="">
+          <div class="mui-media-body">商品购买</div>
+        </router-link>
+      </li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodslist">
+        <img src="../../images/cart.png" alt="">
+        <div class="mui-media-body">我的购物车</div></router-link></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <img src="../../images/cart.png" alt="">
+        <div class="mui-media-body">我的收藏</div></a></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <img src="../../images/cart.png" alt="">
+        <div class="mui-media-body">留言反馈</div></a></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <img src="../../images/cart.png" alt="">
+        <div class="mui-media-body">我的消息</div></a></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <img src="../../images/cart.png" alt="">
+        <div class="mui-media-body">个人中心</div></a></li>
+    </ul>
 
-    <h3>HomeContainer</h3>
   </div>
 </template>
 
