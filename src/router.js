@@ -6,6 +6,8 @@ import NewsContainer from './components/tabbars/NewsContainer.vue'
 import ShopCartContainer from './components/tabbars/ShopCartContainer.vue'
 import ContactContainer from './components/tabbars/ContactContainer.vue'
 
+import GoodsList from "./components/goods/GoodsList.vue";
+
 // 创建路由对象
 const router = new VueRouter({
   routes: [
@@ -14,6 +16,7 @@ const router = new VueRouter({
     { path: '/news', component: NewsContainer },
     { path: '/shopCart', component: ShopCartContainer },
     { path: '/contact', component: ContactContainer },
+    { path: '/home/goodsList', component: GoodsList },
   ],
   linkActiveClass: 'mui-active' // 手动设置 被激活的 路由链接的高亮类名
 })
