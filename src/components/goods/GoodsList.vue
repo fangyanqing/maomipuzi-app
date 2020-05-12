@@ -2,77 +2,77 @@
     <div>
         <!-- 商品列表区域 -->
         <div class="goods-list">
-<!--            <div class="goods-item">-->
-<!--                <img src="../../images/catDemo.jpg">-->
-<!--                <h1 class="title"></h1>-->
-<!--                <div class="info">-->
-<!--                    <p class="price">-->
-<!--                        <span class="new">￥5000</span>-->
-<!--                    <span class="old">￥4000</span>-->
-<!--                    </p>-->
-<!--                    <p class="sell">-->
-<!--                        <span>热卖中</span>-->
-<!--                        <span>剩10件</span>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="goods-item">-->
-<!--                <img src="../../images/catDemo.jpg">-->
-<!--                <h1 class="title"></h1>-->
-<!--                <div class="info">-->
-<!--                    <p class="price">-->
-<!--                        <span class="new">￥5000</span>-->
-<!--                        <span class="old">￥4000</span>-->
-<!--                    </p>-->
-<!--                    <p class="sell">-->
-<!--                        <span>热卖中</span>-->
-<!--                        <span>剩10件</span>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="goods-item">-->
-<!--                <img src="../../images/catDemo.jpg">-->
-<!--                <h1 class="title"></h1>-->
-<!--                <div class="info">-->
-<!--                    <p class="price">-->
-<!--                        <span class="new">￥5000</span>-->
-<!--                        <span class="old">￥4000</span>-->
-<!--                    </p>-->
-<!--                    <p class="sell">-->
-<!--                        <span>热卖中</span>-->
-<!--                        <span>剩10件</span>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="goods-item">-->
-<!--                <img src="../../images/catDemo.jpg">-->
-<!--                <h1 class="title"></h1>-->
-<!--                <div class="info">-->
-<!--                    <p class="price">-->
-<!--                        <span class="new">￥5000</span>-->
-<!--                        <span class="old">￥4000</span>-->
-<!--                    </p>-->
-<!--                    <p class="sell">-->
-<!--                        <span>热卖中</span>-->
-<!--                        <span>剩10件</span>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <router-link tag="div" :to="'/home/goodsinfo/' + item.id" class="goods-item" v-for="item in goodslist" :key="item.id">-->
-            <router-link tag="div" class="goods-item" v-for="item in goodslist" :key="item.id">
-                <img src="../../images/slideshow/lunbo1.jpg" alt="">
-                <h1 class="title">{{ item.goodsName }}</h1>
+            <div class="goods-item">
+                <img src="../../images/catDemo.jpg">
+                <h1 class="title"></h1>
                 <div class="info">
                     <p class="price">
-                        <span class="new">￥{{ item.price }}</span>
-                        <span class="old">￥{{ item.vipPrice }}</span>
+                        <span class="new">￥5000</span>
+                    <span class="old">￥4000</span>
                     </p>
                     <p class="sell">
                         <span>热卖中</span>
-                        <span>剩{{ item.stockNum }}件</span>
+                        <span>剩10件</span>
                     </p>
                 </div>
-            </router-link>
+            </div>
+            <div class="goods-item">
+                <img src="../../images/catDemo.jpg">
+                <h1 class="title"></h1>
+                <div class="info">
+                    <p class="price">
+                        <span class="new">￥5000</span>
+                        <span class="old">￥4000</span>
+                    </p>
+                    <p class="sell">
+                        <span>热卖中</span>
+                        <span>剩10件</span>
+                    </p>
+                </div>
+            </div>
+            <div class="goods-item">
+                <img src="../../images/catDemo.jpg">
+                <h1 class="title"></h1>
+                <div class="info">
+                    <p class="price">
+                        <span class="new">￥5000</span>
+                        <span class="old">￥4000</span>
+                    </p>
+                    <p class="sell">
+                        <span>热卖中</span>
+                        <span>剩10件</span>
+                    </p>
+                </div>
+            </div>
+            <div class="goods-item">
+                <img src="../../images/catDemo.jpg">
+                <h1 class="title"></h1>
+                <div class="info">
+                    <p class="price">
+                        <span class="new">￥5000</span>
+                        <span class="old">￥4000</span>
+                    </p>
+                    <p class="sell">
+                        <span>热卖中</span>
+                        <span>剩10件</span>
+                    </p>
+                </div>
+            </div>
+<!--            <router-link tag="div" :to="'/home/goodsinfo/' + item.id" class="goods-item" v-for="item in goodslist" :key="item.id">-->
+<!--            <router-link tag="div" class="goods-item" v-for="item in goodslist" :key="item.id">-->
+<!--                <img src="../../images/slideshow/lunbo1.jpg" alt="">-->
+<!--                <h1 class="title">{{ item.goodsName }}</h1>-->
+<!--                <div class="info">-->
+<!--                    <p class="price">-->
+<!--                        <span class="new">￥{{ item.price }}</span>-->
+<!--                        <span class="old">￥{{ item.vipPrice }}</span>-->
+<!--                    </p>-->
+<!--                    <p class="sell">-->
+<!--                        <span>热卖中</span>-->
+<!--                        <span>剩{{ item.stockNum }}件</span>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </router-link>-->
 
 
             <mt-button type="danger" size="large" style="margin-top: 10px;" @click="getMore">加载更多</mt-button>
