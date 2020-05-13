@@ -18,7 +18,7 @@ const router = new VueRouter({
     { path: '/shopCart', component: ShopCartContainer },
     { path: '/contact', component: ContactContainer },
     { path: '/home/goodsList', component: GoodsList },
-    { path: '/home/goodsInfo', component: GoodsInfo },
+    { path: '/home/goodsInfo/:id', component: GoodsInfo , props: true},
   ],
   linkActiveClass: 'mui-active' // 手动设置 被激活的 路由链接的高亮类名
 })

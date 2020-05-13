@@ -74,11 +74,12 @@
         methods: {
             async getGoodsInfoById() {
                 // 根据ID获取商品的参数
-                const { data } = await this.$http.get("/findById/" +20);
+                const { data } = await this.$http.get("/findById/" +this.id);
                 console.log(data)
                 if (data.code === 200) return (this.goodsInfo = data.data);
             },
         },
+        props: ["id"],
         components: {
             // 注册子组件
             // numBox
