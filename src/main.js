@@ -17,12 +17,13 @@ import '../lib/mui/css/mui.min.css'
 // 导入MUI的扩展图标
 import '../lib/mui/css/icons-extra.css'
 
-// // 配置 axios
-// import axios from 'axios'
-// // 把 axios 挂载到 Vue的 原型对象上
-// Vue.prototype.$http = axios.create({
-//   baseURL: 'http://localhost:8082/goods/api' // 在全局设置 axios 的请求根路径，这样，在发起请求的时候，就可以不写 根地址了
-// })
+// 配置 axios
+import axios from 'axios'
+// 把 axios 挂载到 Vue的 原型对象上
+Vue.prototype.$http = axios.create({
+  baseURL: 'http://localhost:8082/skuGoods' // 在全局设置 axios 的请求根路径，这样，在发起请求的时候，就可以不写 根地址了
+})
+
 
 // 配置路由
 import VueRouter from 'vue-router'
