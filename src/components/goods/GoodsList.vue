@@ -2,7 +2,7 @@
     <div>
         <!-- 商品列表区域 -->
         <div class="goods-list">
-            <router-link tag="div" :to="'/home/goodsList'" class="goods-item" v-for="item in goodsList" :key="item.id">
+            <router-link tag="div" :to="'/home/goodsInfo' + item.id" class="goods-item" v-for="item in goodsList" :key="item.id">
                 <img src="../../images/slideshow/lunbo1.jpg" alt="">
                 <h1 class="title">{{ item.goodsName }}</h1>
                 <div class="info">
@@ -12,7 +12,7 @@
                     </p>
                     <p class="sell">
                         <span>热卖中</span>
-                        <span>剩{{ item.status }}件</span>
+                        <span>剩{{ item.stockNum }}件</span>
                     </p>
                 </div>
             </router-link>
@@ -61,55 +61,56 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .goods-list {
-    /*设置父盒子为弹性盒模型*/
-    display: flex;
-   /*默认flex 布局的盒子，内部的子元素不会换行，可以使用下面的属性使其换行*/
-    flex-wrap: wrap;
+        // 设置父盒子为弹性盒模型
+        display: flex;
+        // 默认flex 布局的盒子，内部的子元素不会换行，可以使用下面的属性使其换行
+        flex-wrap: wrap;
         justify-content: space-between;
         padding: 7px;
         padding-top: 0;
-    }
-    .goods-item {
-        width: 49%;
-        border: 1px solid #ccc;
-        margin-top: 7px;
-        box-shadow: 0 0 7px #ccc;
-        padding: 2px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+        .goods-item {
+            width: 49%;
+            border: 1px solid #ccc;
+            margin-top: 7px;
+            box-shadow: 0 0 7px #ccc;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
-    img {
-        width: 100%;
-        min-height: 170px;
-    }
-    .title {
-        font-size: 14px;
-    }
-    .info {
-        background-color: #eee;
-        overflow: hidden;
-    }
-    p {
-        margin: 3px;
-    }
-    .price {}
-    .new {
-        color: red;
-        font-size: 16px;
-        font-weight: bold;
-        margin-right: 10px;
-    }
-    .old {
-        text-decoration: line-through;
-        font-size: 12px;
-    }
-    .sell {
-        display: flex;
-        justify-content: space-between;
-        font-size: 13px;
+            img {
+                width: 100%;
+                min-height: 170px;
+            }
+            .title {
+                font-size: 14px;
+            }
+            .info {
+                background-color: #eee;
+                overflow: hidden;
+                p {
+                    margin: 3px;
+                }
+                .price {
+                    .new {
+                        color: red;
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin-right: 10px;
+                    }
+                    .old {
+                        text-decoration: line-through;
+                        font-size: 12px;
+                    }
+                }
+                .sell {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 13px;
+                }
+            }
+        }
     }
 </style>
