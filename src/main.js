@@ -16,6 +16,8 @@ Vue.use(MintUI)
 import '../lib/mui/css/mui.min.css'
 // 导入MUI的扩展图标
 import '../lib/mui/css/icons-extra.css'
+//导入格式化的时间插件
+import moment from "moment"
 
 // 配置 axios
 import axios from 'axios'
@@ -24,6 +26,11 @@ Vue.prototype.$http = axios.create({
   baseURL: 'http://localhost:8082/skuGoods' // 在全局设置 axios 的请求根路径，这样，在发起请求的时候，就可以不写 根地址了
 })
 
+//定义全局的时间过滤器
+Vue.filter('dateFormat',function (dateStr) {
+  //在过滤器的处理函数中，最后必须return，这样才是一个合法的过滤器
+  return moment(dateStr).format('yyyy-MM-DD HH:mm:ss')
+})
 
 // 配置路由
 import VueRouter from 'vue-router'

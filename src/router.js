@@ -8,6 +8,11 @@ import ContactContainer from './components/tabbars/ContactContainer.vue'
 
 import GoodsList from "./components/goods/GoodsList.vue";
 import GoodsInfo from "./components/goods/GoodsInfo.vue";
+import Login from "./components/LoginAndRegister/Login.vue";
+import CartList from "./components/shoppingCart/CartList.vue";
+import CollectionList from "./components/collection/CollectionList.vue";
+import CommentList from "./components/comment/CommentList.vue";
+import OrderList from "./components/order/OrderList.vue";
 
 // 创建路由对象
 const router = new VueRouter({
@@ -19,6 +24,11 @@ const router = new VueRouter({
     { path: '/contact', component: ContactContainer },
     { path: '/home/goodsList', component: GoodsList },
     { path: '/home/goodsInfo/:id', component: GoodsInfo , props: true},
+    { path: '/login', component: Login },
+    { path: '/shoppingCart/cartList', component: CartList },
+    { path: '/collection/collectionList', component: CollectionList },
+    { path: '/comment/commentList', component: CommentList },
+    { path: '/order/orderList', component: OrderList },
   ],
   linkActiveClass: 'mui-active' // 手动设置 被激活的 路由链接的高亮类名
 })
