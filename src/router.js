@@ -27,7 +27,7 @@ const router = new VueRouter({
     { path: '/login', component: Login },
     { path: '/shoppingCart/cartList', component: CartList },
     { path: '/collection/collectionList', component: CollectionList },
-    { path: '/comment/commentList', component: CommentList },
+    { path: '/comment/commentList/:id', component: CommentList, props: true },
     { path: '/order/orderList', component: OrderList },
   ],
   linkActiveClass: 'mui-active' // 手动设置 被激活的 路由链接的高亮类名

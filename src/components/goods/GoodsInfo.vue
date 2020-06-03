@@ -28,9 +28,9 @@
                         购买数量：
                         <!-- 注意： 这里 的 max 是库存量 -->
                         <!-- 由于 goodsinfo 是通过 Ajax 动态获取回来的，但是，Ajax 是异步请求，需要消耗时间 -->
-                        <!-- 因此，可能会导致这样的情况： bobox 组件 先于 Ajax 渲染出来，此时， 组件被渲染的时候， goodsinfo 为 空对象，因此，传递到子组件中的 stock_quantity 是 undefined；  -->
-<!--                        <numBox :max="goodsInfo.stockNum"></numBox>-->
-                        <!-- <nobox :max="60"></nobox> -->
+                        <!-- 因此，可能会导致这样的情况： bobox 组件 先于 Ajax 渲染出来，此时， 组件被渲染的时候， goodsinfo 为 空对象，
+                        因此，传递到子组件中的 stockNum 是 undefined；  -->
+<!--                        <goodsInfoNoBox :max="goodsInfo.stockNum"></goodsInfoNoBox>-->
                     </p>
                     <div>
                         <mt-button type="primary" size="small">立即购买</mt-button>
@@ -52,7 +52,7 @@
             </div>
             <div class="mui-card-footer btnarea">
                 <mt-button type="primary" size="large" plain>图文介绍</mt-button>
-                <mt-button type="danger" size="large" plain>商品评论</mt-button>
+                <mt-button type="danger" size="large" plain @click="goCommentList">商品评论</mt-button>
             </div>
         </div>
     </div>
@@ -60,7 +60,7 @@
 
 <script>
     // 导入 数字框组件
-    // import numBox from "../utit/NumBox.vue";
+    // import goodsInfoNoBox from "../utit/GoodsInfoNoBox.vue";
     export default {
         name: "GoodsInfo",
         data() {
@@ -78,11 +78,15 @@
                 console.log(data)
                 if (data.code === 200) return (this.goodsInfo = data.data);
             },
+            goCommentList(){
+                //跳转到评论页面
+                this.$router.push("/comment/commentList/"+this.id)
+            }
         },
         props: ["id"],
         components: {
             // 注册子组件
-            // numBox
+            // goodsInfoNoBox
         }
     }
 </script>

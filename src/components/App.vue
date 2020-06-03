@@ -38,7 +38,10 @@
     // }
 </script>
 
-<style scoped>
+<style lang="scss" >
+    /**{*/
+    /*    touch-action: none;*/
+    /*}*/
     .app-container {
         padding-top: 40px;
     }
