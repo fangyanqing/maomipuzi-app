@@ -25,7 +25,6 @@
     // 按需从 MintUI 中，导出需要的 弹框组件
     import { Toast } from "mint-ui";
     import moment from "moment";
-    import GoodsInfo from "../goods/GoodsInfo";
     export default {
         name: "Comment",
         data() {
