@@ -20,21 +20,21 @@
           <div class="mui-media-body">商品购买</div>
         </router-link>
       </li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodsInfo">
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/shopCart">
         <img src="../../images/cart.png" alt="">
-        <div class="mui-media-body">我的购物车</div></router-link></li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <div class="mui-media-body">我的购物车</div></router-link ></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/collection/collectionList">
         <img src="../../images/cart.png" alt="">
-        <div class="mui-media-body">我的收藏</div></a></li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <div class="mui-media-body">我的收藏</div></router-link></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/new">
         <img src="../../images/cart.png" alt="">
-        <div class="mui-media-body">留言反馈</div></a></li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <div class="mui-media-body">留言反馈</div></router-link></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/news">
         <img src="../../images/cart.png" alt="">
-        <div class="mui-media-body">我的消息</div></a></li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+        <div class="mui-media-body">我的消息</div></router-link></li>
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/contact">
         <img src="../../images/cart.png" alt="">
-        <div class="mui-media-body">个人中心</div></a></li>
+        <div class="mui-media-body">个人中心</div></router-link></li>
     </ul>
     <!-- 商品列表区域 -->
     <div class="goods-list">

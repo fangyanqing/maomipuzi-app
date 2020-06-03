@@ -1,6 +1,10 @@
 // 项目的JS打包入口文件
 // 导入Vue
 import Vue from 'vue'
+
+//导入状态管理对象
+import store from "./store.js";
+
 // 导入 根组件
 import App from './components/App.vue'
 

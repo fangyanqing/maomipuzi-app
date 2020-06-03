@@ -39,7 +39,8 @@
     "mint-ui": "^2.2.13",
     "moment": "^2.26.0",
     "vue": "^2.5.13",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.4.0"
   },
   "directories": {
     "lib": "lib"
