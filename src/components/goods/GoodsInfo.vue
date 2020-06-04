@@ -135,7 +135,6 @@
                 this.addToCar({
                     id: this.id,
                     quantity: this.selectedCount,
-                    selected: true,
                 });
             },
             getSelectedCount(c){

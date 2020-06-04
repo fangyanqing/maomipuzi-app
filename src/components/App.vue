@@ -25,7 +25,7 @@
                 <span class="mui-tab-label">消息</span>
             </router-link>
             <router-link class="my-tab-item" to="/shopCart">
-                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">0</span></span>
+                <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">{{totalcount}}</span></span>
                 <span class="mui-tab-label">购物车</span>
             </router-link>
             <router-link class="my-tab-item" to="/contact">
@@ -76,7 +76,6 @@
     };
 </script>
 
-// 这里写的样式，要符合 scss 语法，并且，样式是 当前组件私有的，不会成为全局的样式，也不会应用给子组件
 <style lang="scss" scoped>
     .app-container {
         padding-top: 40px;

@@ -21,5 +21,6 @@ import router from './router.js'
 const vm = new Vue({
   el: '#app',
   render: c => c(App),
-  router // 挂载路由)
+  router, // 挂载路由)
+  store // 挂载 store
 })
