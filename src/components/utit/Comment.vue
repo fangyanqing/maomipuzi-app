@@ -60,6 +60,7 @@
                     {
                         content: this.msg.trim(),
                         skuId: this.id,
+                        userId:1,
                         commentTime:  moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
                     }
                 );

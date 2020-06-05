@@ -21,12 +21,12 @@
                         </label>
 <!--                        <div id="ck1" name="product" class="mini-checkbox" checked="true" text="MiniUI CheckBox" ></div>-->
                         <!-- 图片 -->
-                        <img src="../../images/slideshow/lunbo1.jpg" alt="">
+                        <img :src="item.image" alt="">
                         <!-- 信息区域 -->
                         <div class="info">
-                            <h1>{{ item.cartInfoId }}</h1>
+                            <h1>{{ item.goodsName }}</h1>
                             <div class="goods-info">
-                                <span class="price" style="margin-right: 3px">￥{{item.cartId}}</span>
+                                <span class="price" style="margin-right: 3px">￥{{item.quantity}}</span>
                                 <!-- countObj[item.id] 表示这条商品对应的数量 -->
                                 <cartNoBox></cartNoBox>
                                 <a href="#" style="margin-left: 3px" @click.prevent="deleted">删除</a>

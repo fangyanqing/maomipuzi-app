@@ -73,6 +73,7 @@
     // 导入 数字框组件
     import goodsInfoNoBox from "../utit/GoodsInfoNoBox.vue";
     import { mapMutations } from "vuex";
+    import moment from "moment";
     export default {
         name: "GoodsInfo",
         data() {
@@ -137,6 +138,18 @@
                     id: this.id,
                     quantity: this.selectedCount,
                 });
+                const {data} =this.$http.post("http://localhost:8086/cartInfo/add",{
+                    id: this.id,
+                    cartId: '1',
+                    goodsNo: 'fyq202001160001' ,
+                    price: '3500',
+                    image: '/src/images/slideshow/maomi.jpg',
+                    quantity: this.selectedCount,
+                });
+                if (data.code === 200) {
+                   alert("添加成功")
+                    this.$router.push("/shoppingCart/cartList")
+                }
             },
             getSelectedCount(c){
                 //获取商品的数量
