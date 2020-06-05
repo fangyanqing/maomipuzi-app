@@ -20,9 +20,9 @@
                 <span class="mui-icon mui-icon-home"></span>
                 <span class="mui-tab-label">首页</span>
             </router-link>
-            <router-link class="my-tab-item" to="/collection/collectionList">
+            <router-link class="my-tab-item" to="/order/orderInfoList">
                 <span class="mui-icon mui-icon-chat"></span>
-                <span class="mui-tab-label">我的收藏</span>
+                <span class="mui-tab-label">我的订单</span>
             </router-link>
             <router-link class="my-tab-item" to="/shopCart">
                 <span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">{{totalcount}}</span></span>

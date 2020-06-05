@@ -3,13 +3,24 @@
         <div class="goods-list">
             <div class="mui-card">
                 <div class="mui-card-content">
-                    <div class="mui-card-content-inner goods-item">
+                    <div class="adressInfo" style="margin-top: 10px" v-for="item in userInfo"><p>{{item.realName}}<span style="margin-left: 10px">{{item.phone}}</span></p></div>
+                    <div class="adressInfo" v-for="items in address">{{items.detailAddress}}</div>
+                    <div class="adressInfo" style="color: #cf2d28;" @click="toAddress">更多</div>
+                </div>
+            </div>
+
+            <div class="mui-card">
+                <div class="mui-card-content">
+                    <div class="mui-card-content-inner goods-item" v-for="item in orderList">
                         <img src="../../images/slideshow/lunbo1.jpg" alt="">
                         <!-- 信息区域 -->
                         <div class="info">
                             <h1>布偶猫白色</h1>
                             <div class="goods-info">
-                                <span class="price" style="margin-right: 3px">￥3000</span>
+                                <span class="price" style="margin-right: 3px">￥{{item.payPrice}}</span>
+                                <span style="margin-left: 10px">{{item.payStatus}}</span>
+                                <span style="margin-left: 10px">{{item. orderInfoStatus}}</span>
+
                             </div>
                         </div>
                     </div>
@@ -34,9 +45,50 @@
 <script>
     export default {
         name: "OrderList",
+        data() {
+            return {
+                page: 1, // 默认展示第一页的数据
+                size: 4,
+                pageNum:1,
+                pageSize:1,
+                orderList: [],
+                userInfo: [],
+                address:[]
+            };
+        },
+        created() {
+            this.getOrderListByPage();
+            this.getUserInfo();
+            this.getAddressInfo();
+        },
         methods: {
+            async getOrderListByPage() {
+                // 根据页码获取 商品列表
+                const {data} = await this.$http.post("http://localhost:8085/orderInfo/search/" + this.page + "/" + this.size);
+                console.log(data)
+                if (data.code === 200) {
+                    this.orderList = this.orderList.concat(data.data.list);
+                }
+            },
+            async getUserInfo() {
+                const {data} = await this.$http.post("http://localhost:8083/user/search/" + this.pageNum + "/" + this.pageSize);
+                console.log(data)
+                if (data.code === 200) {
+                    this.userInfo = this.userInfo.concat(data.data.list);
+                }
+            },
+            async getAddressInfo() {
+                const {data} = await this.$http.post("http://localhost:8083/addressInfo/search/" + this.pageNum + "/" + this.pageSize);
+                console.log(data)
+                if (data.code === 200) {
+                    this.address = this.address.concat(data.data.list);
+                }
+            },
             toPay(){
                 this.$router.push("/payment")
+            },
+            toAddress(){
+                this.$router.push("/addressInfo")
             }
         }
     }
@@ -44,6 +96,9 @@
 
 
 <style lang="scss" scoped>
+    .adressInfo{
+        margin-left: 5px;
+    }
     .allSelect{
         height: 30px;
     }

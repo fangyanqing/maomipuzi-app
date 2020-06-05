@@ -26,9 +26,9 @@
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/collection/collectionList">
         <img src="../../images/cart.png" alt="">
         <div class="mui-media-body">我的收藏</div></router-link></li>
-      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/new">
+      <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/comment/myComment">
         <img src="../../images/cart.png" alt="">
-        <div class="mui-media-body">留言反馈</div></router-link></li>
+        <div class="mui-media-body">我的评论</div></router-link></li>
       <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/news">
         <img src="../../images/cart.png" alt="">
         <div class="mui-media-body">我的消息</div></router-link></li>

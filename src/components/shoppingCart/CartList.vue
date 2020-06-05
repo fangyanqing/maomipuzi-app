@@ -12,10 +12,7 @@
                             <span class="mint-checkbox-label">全选</span>
                         </label>
                     </div>
-                    <div class="mui-card-content-inner goods-item">
-    <!--                            &lt;!&ndash; 开关 &ndash;&gt;-->
-<!--                                <mt-switch></mt-switch>-->
-<!--                        <input id="id" name="id" value="" class="mini-checkbox"/>-->
+                    <div class="mui-card-content-inner goods-item" v-for="item in goodsList">
                         <label class="mint-checklist-label" style="margin-left:-15px">
                             <span class="mint-checkbox">
                                 <input type="checkbox" class="mint-checkbox-input" >
@@ -27,9 +24,9 @@
                         <img src="../../images/slideshow/lunbo1.jpg" alt="">
                         <!-- 信息区域 -->
                         <div class="info">
-                            <h1>布偶猫白色</h1>
+                            <h1>{{ item.cartInfoId }}</h1>
                             <div class="goods-info">
-                                <span class="price" style="margin-right: 3px">￥3000</span>
+                                <span class="price" style="margin-right: 3px">￥{{item.cartId}}</span>
                                 <!-- countObj[item.id] 表示这条商品对应的数量 -->
                                 <cartNoBox></cartNoBox>
                                 <a href="#" style="margin-left: 3px" @click.prevent="deleted">删除</a>
@@ -68,12 +65,24 @@
         name: "CartList",
         data() {
             return {
-                goodsList: [] // 商品列表
+                page: 1, // 默认展示第一页的数据
+                size: 4,
+                goodsList: [],
+                // isloaded: false // 节流阀，默认为false,表示没有加载完毕
             };
         },
         created() {
+            this.getCartListByPage();
         },
         methods: {
+            async getCartListByPage() {
+                // 根据页码获取 商品列表
+                const {data} = await this.$http.get("http://localhost:8086/cartInfo/search/" + this.page + "/" + this.size);
+                console.log(data)
+                if (data.code === 200) {
+                    this.goodsList = this.goodsList.concat(data.data.list);
+                }
+            },
             deleted(id) {
                 // 删除商品
                 // console.log(id);
