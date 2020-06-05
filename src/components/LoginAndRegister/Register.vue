@@ -11,7 +11,30 @@
 <script>
     export default {
         name: "Register",
+        data(){
+            return{
+                realName: "",
+                password: "",
+                phone:"",
+            }
+        },
+        methods: {
+            async login() {
+                // 根据页码获取 商品列表
+                const {data} = await this.$http.post("http://localhost:8083/user/add", {
+                    realName: this.realName,
+                    password: this.password,
+                    phone:this.phone
+                });
 
+                console.log(data)
+                if (data.code === 200) {
+                    this.$router.push("/login")
+                }else{
+                    alert("注册失败，请重新填写信息注册！")
+                }
+            },
+        }
     }
 </script>
 
