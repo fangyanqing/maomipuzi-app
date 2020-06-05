@@ -11,10 +11,10 @@
                             <h1>{{ item.goodsName }}</h1>
                             <div class="goods-info">
                                 <span class="price">￥{{ item.price }}</span>
-                                <a href="#" style="
-                    margin-left: 55px;" >取消收藏</a>
+                                <span href="#" style="
+                    margin-left: 55px;color:deepskyblue" @click="deleted(item.collectId)" >取消收藏</span>
                             </div>
-                            <div><span>收藏时间：{{ item.shelvesTime}}</span></div>
+                            <div><span>收藏时间：{{ item.collectTime}}</span></div>
                         </div>
                     </div>
                     <mt-button type="danger" size="large" style="margin-top: 10px;" @click="getMore">加载更多</mt-button>
@@ -26,6 +26,7 @@
 </template>
 
 <script>
+    import { MessageBox } from 'mint-ui';
     export default {
         name: "CollectionList",
         data() {
@@ -42,7 +43,7 @@
         methods: {
             async getGoodsListByPage() {
                 // 根据页码获取 商品列表
-                const {data} = await this.$http.get("/search/" + this.page + "/" + this.size);
+                const {data} = await this.$http.get("http://localhost:8083/collect/search/" + this.page + "/" + this.size);
                 console.log(data)
                 if (data.code === 200) {
                     if (data.data.list.length <= 0) {
@@ -51,6 +52,29 @@
                     }
                     this.collectionList = this.collectionList.concat(data.data.list);
                 }
+            },
+            deleted(id) {
+                console.log(id)
+                MessageBox.confirm('',{
+                    title:'提示',
+                    message:'是否取消收藏',
+                    confirmButtonText:'确定',
+                    cancelButtonText:'取消'
+                }).then(()=> {
+                    const {data} = this.$http.delete("http://localhost:8083/collect/deleted/" + id);
+                    if (data.code === 200) {
+                        MessageBox('提示', '取消成功')
+                        this.getGoodsListByPage();
+                    } else {
+                        MessageBox('提示','取消收藏失败')
+                        this.getGoodsListByPage();
+                    }
+                }).catch(error=>{
+                    if(error=='cancel'){
+                        MessageBox('提示','点击取消')
+                    }
+                })
+
             },
             getMore() {
                 // 如果为true，表示数据已经加载完毕了，此时直接return

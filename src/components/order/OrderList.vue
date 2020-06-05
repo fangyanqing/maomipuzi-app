@@ -18,8 +18,8 @@
                             <h1>布偶猫白色</h1>
                             <div class="goods-info">
                                 <span class="price" style="margin-right: 3px">￥{{item.payPrice}}</span>
-                                <span style="margin-left: 10px">{{item.payStatus}}</span>
-                                <span style="margin-left: 10px">{{item. orderInfoStatus}}</span>
+                                <span style="margin-left: 10px">{{item.payStatus ==0?"未支付":(item.payStatus ==1?"已付款":"付款失败")}}</span>
+                                <span style="margin-left: 10px">{{item. orderInfoStatus ==0?"订单正常":"退款中"}}</span>
 
                             </div>
                         </div>
