@@ -43,7 +43,7 @@
                         <goodsInfoNoBox :max="goodsInfo.stockNum" @func="getSelectedCount"></goodsInfoNoBox>
                     </p>
                     <div>
-                        <mt-button type="primary" size="small">立即购买</mt-button>
+                        <mt-button type="primary" size="small" @click="addToOrder">立即购买</mt-button>
                         <mt-button type="danger" size="small" @click="addToCart">加入购物车</mt-button>
                         <mt-button type="default" size="small" @click="addToCollect">收藏</mt-button>
                     </div>
@@ -145,6 +145,9 @@
             },
             addToCollect(){
                 this.$router.push("/collection/collectionList")
+            },
+            addToOrder(){
+                this.$router.push("/order/orderList")
             }
         },
         props: ["id"],

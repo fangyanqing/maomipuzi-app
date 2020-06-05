@@ -37,27 +37,31 @@
         <div class="mui-media-body">个人中心</div></router-link></li>
     </ul>
     <!-- 商品列表区域 -->
-    <div class="goods-list">
-      <router-link tag="div" :to="'/home/goodsInfo/' + item.id" class="goods-item" v-for="item in goodsList" :key="item.id">
-        <img src="../../images/slideshow/lunbo1.jpg" alt="">
-        <h1 class="title">{{ item.goodsName }}</h1>
-        <div class="info">
-          <p class="price">
-            <span class="new">￥{{ item.price }}</span>
-            <span class="old">￥{{ item.vipPrice }}</span>
-          </p>
-          <p class="sell">
-            <span>热卖中</span>
-            <span>剩{{ item.stockNum }}件</span>
-          </p>
-        </div>
-      </router-link>
-    </div>
+    <goodsList></goodsList>
+<!--    <div class="goods-list">-->
+<!--      <router-link tag="div" :to="'/home/goodsInfo/' + item.id" class="goods-item" v-for="item in goodsList" :key="item.id">-->
+<!--        <img :src="item.image" alt="">-->
+<!--        <h1 class="title">{{ item.goodsName }}</h1>-->
+<!--        <div class="info">-->
+<!--          <p class="price">-->
+<!--            <span class="new">￥{{ item.price }}</span>-->
+<!--            <span class="old">￥{{ item.vipPrice }}</span>-->
+<!--          </p>-->
+<!--          <p class="sell">-->
+<!--            <span>热卖中</span>-->
+<!--            <span>剩{{ item.stockNum }}件</span>-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </router-link>-->
+<!--      <mt-button type="danger" size="large" style="margin-top: 10px;" @click="getMore">加载更多</mt-button>-->
+<!--    </div>-->
   </div>
 </template>
 
 <script>
+  import goodsList from "../goods/GoodsList.vue";
 export default {
+  components: {goodsList},
   data() {
     return {
       // lunbotu: [] // 轮播图的数组
@@ -140,56 +144,56 @@ export default {
   .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
     font-size: 13px;
   }
-  .goods-list {
-    // 设置父盒子为弹性盒模型
-    display: flex;
-    // 默认flex 布局的盒子，内部的子元素不会换行，可以使用下面的属性使其换行
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 7px;
-    padding-top: 0;
-    .goods-item {
-      width: 49%;
-      border: 1px solid #ccc;
-      margin-top: 7px;
-      box-shadow: 0 0 7px #ccc;
-      padding: 2px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+  /*.goods-list {*/
+  /*  // 设置父盒子为弹性盒模型*/
+  /*  display: flex;*/
+  /*  // 默认flex 布局的盒子，内部的子元素不会换行，可以使用下面的属性使其换行*/
+  /*  flex-wrap: wrap;*/
+  /*  justify-content: space-between;*/
+  /*  padding: 7px;*/
+  /*  padding-top: 0;*/
+  /*  .goods-item {*/
+  /*    width: 49%;*/
+  /*    border: 1px solid #ccc;*/
+  /*    margin-top: 7px;*/
+  /*    box-shadow: 0 0 7px #ccc;*/
+  /*    padding: 2px;*/
+  /*    display: flex;*/
+  /*    flex-direction: column;*/
+  /*    justify-content: space-between;*/
 
-      img {
-        width: 100%;
-        min-height: 170px;
-      }
-      .title {
-        font-size: 14px;
-      }
-      .info {
-        background-color: #eee;
-        overflow: hidden;
-        p {
-          margin: 3px;
-        }
-        .price {
-          .new {
-            color: red;
-            font-size: 16px;
-            font-weight: bold;
-            margin-right: 10px;
-          }
-          .old {
-            text-decoration: line-through;
-            font-size: 12px;
-          }
-        }
-        .sell {
-          display: flex;
-          justify-content: space-between;
-          font-size: 13px;
-        }
-      }
-    }
-  }
+  /*    img {*/
+  /*      width: 100%;*/
+  /*      min-height: 170px;*/
+  /*    }*/
+  /*    .title {*/
+  /*      font-size: 14px;*/
+  /*    }*/
+  /*    .info {*/
+  /*      background-color: #eee;*/
+  /*      overflow: hidden;*/
+  /*      p {*/
+  /*        margin: 3px;*/
+  /*      }*/
+  /*      .price {*/
+  /*        .new {*/
+  /*          color: red;*/
+  /*          font-size: 16px;*/
+  /*          font-weight: bold;*/
+  /*          margin-right: 10px;*/
+  /*        }*/
+  /*        .old {*/
+  /*          text-decoration: line-through;*/
+  /*          font-size: 12px;*/
+  /*        }*/
+  /*      }*/
+  /*      .sell {*/
+  /*        display: flex;*/
+  /*        justify-content: space-between;*/
+  /*        font-size: 13px;*/
+  /*      }*/
+  /*    }*/
+  /*  }*/
+  /*}*/
 
 </style>

@@ -14,6 +14,7 @@ import CollectionList from "./components/collection/CollectionList.vue";
 import CommentList from "./components/comment/CommentList.vue";
 import OrderList from "./components/order/OrderList.vue";
 import Register from "./components/LoginAndRegister/Register.vue";
+import Payment from "./components/order/Payment.vue";
 
 // 创建路由对象
 const router = new VueRouter({
@@ -31,6 +32,7 @@ const router = new VueRouter({
     { path: '/comment/commentList/:id', component: CommentList, props: true },
     { path: '/order/orderList', component: OrderList },
     { path: '/register', component: Register },
+    { path: '/payment', component: Payment },
   ],
   linkActiveClass: 'mui-active' // 手动设置 被激活的 路由链接的高亮类名
 })

@@ -3,7 +3,7 @@
         <!-- 商品列表区域 -->
         <div class="goods-list">
             <router-link tag="div" :to="'/home/goodsInfo/' + item.id" class="goods-item" v-for="item in goodsList" :key="item.id">
-                <img src="../../images/slideshow/lunbo1.jpg" alt="">
+                <img :src="item.image" alt="">
                 <h1 class="title">{{ item.goodsName }}</h1>
                 <div class="info">
                     <p class="price">

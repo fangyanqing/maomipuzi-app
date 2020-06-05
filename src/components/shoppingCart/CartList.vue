@@ -51,7 +51,7 @@
                                 已勾选商品<span class="danger">0</span>件，总价<span class="danger">￥0</span>
                             </p>
                         </div>
-                        <mt-button type="danger">去结算</mt-button>
+                        <mt-button type="danger"  @click="toPay">去结算</mt-button>
                     </div>
                 </div>
             </div>
@@ -87,6 +87,9 @@
                 // 从 vuex 中删除数据
                 // this.delFromCart(id);
             },
+            toPay(){
+                this.$router.push("/payment")
+            }
         },
         components: {
             // 注册子组件
