@@ -78,12 +78,12 @@ const store = new Vuex.Store({
             state.cart.forEach(item => c += item.quantity)
             return c
         },
-        // idstr(state) {
-        //     // 获取购物车中所有的商品的Id字符串
-        //     let arr = []
-        //     state.cart.forEach(item => arr.push(item.id))
-        //     return arr.join(',')
-        // },
+        idstr(state) {
+            // 获取购物车中所有的商品的Id字符串
+            let arr = []
+            state.cart.forEach(item => arr.push(item.id))
+            return arr.join(',')
+        },
         // countObj(state) {
         //     /* 获取 购物车中 商品的Id和商品数量的键值对对应关系 */
         //     let o = {}

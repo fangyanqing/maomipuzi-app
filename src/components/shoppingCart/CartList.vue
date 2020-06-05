@@ -3,9 +3,25 @@
         <div class="goods-list">
             <div class="mui-card">
                 <div class="mui-card-content">
+                    <div class="allSelect">
+                        <label class="mint-checklist-label " style="margin-top: 5px">
+                            <span class="mint-checkbox" >
+                                <input type="checkbox" class="mint-checkbox-input">
+                                <span class="mint-checkbox-core"></span>
+                            </span>
+                            <span class="mint-checkbox-label">全选</span>
+                        </label>
+                    </div>
                     <div class="mui-card-content-inner goods-item">
     <!--                            &lt;!&ndash; 开关 &ndash;&gt;-->
-                                <mt-switch ></mt-switch>
+<!--                                <mt-switch></mt-switch>-->
+<!--                        <input id="id" name="id" value="" class="mini-checkbox"/>-->
+                        <label class="mint-checklist-label" style="margin-left:-15px">
+                            <span class="mint-checkbox">
+                                <input type="checkbox" class="mint-checkbox-input" >
+                                <span class="mint-checkbox-core"></span>
+                            </span>
+                        </label>
 <!--                        <div id="ck1" name="product" class="mini-checkbox" checked="true" text="MiniUI CheckBox" ></div>-->
                         <!-- 图片 -->
                         <img src="../../images/slideshow/lunbo1.jpg" alt="">
@@ -13,14 +29,15 @@
                         <div class="info">
                             <h1>布偶猫白色</h1>
                             <div class="goods-info">
-                                <span class="price">￥3000</span>
+                                <span class="price" style="margin-right: 3px">￥3000</span>
                                 <!-- countObj[item.id] 表示这条商品对应的数量 -->
-<!--                                <nobox :initcount="countObj[item.id]" :id="item.id"></nobox>-->
-                                <a href="#" style="
-                    margin-left: 55px;" @click.prevent="deleted">删除</a>
+                                <cartNoBox></cartNoBox>
+                                <a href="#" style="margin-left: 3px" @click.prevent="deleted">删除</a>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
 
@@ -46,6 +63,7 @@
 </template>
 
 <script>
+    import cartNoBox from "../utit/CartNoBox.vue";
     export default {
         name: "CartList",
         data() {
@@ -70,16 +88,24 @@
                 // this.delFromCart(id);
             },
         },
+        components: {
+            // 注册子组件
+            cartNoBox
+        }
     }
 </script>
 
 <style lang="scss" scoped>
+    .allSelect{
+        height: 30px;
+    }
     .shopcar-container {
         background-color: #eee;
         overflow: hidden;
 
         .goods-item {
             display: flex;
+            border: 1px solid #ccc;
             img {
                 margin-left: 5px;
                 width: 60px;

@@ -45,6 +45,7 @@
                     <div>
                         <mt-button type="primary" size="small">立即购买</mt-button>
                         <mt-button type="danger" size="small" @click="addToCart">加入购物车</mt-button>
+                        <mt-button type="default" size="small" @click="addToCollect">收藏</mt-button>
                     </div>
                 </div>
             </div>
@@ -141,6 +142,9 @@
                 //获取商品的数量
                 // 把 用户选择的最新的数量值，保存到 data 中，方便用户点击加入购物车按钮时候，把数量值同步到 徽标中
                 this.selectedCount = c;
+            },
+            addToCollect(){
+                this.$router.push("/collection/collectionList")
             }
         },
         props: ["id"],

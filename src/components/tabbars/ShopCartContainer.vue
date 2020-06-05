@@ -1,15 +1,20 @@
 <template>
   <div>
-    <h3>ShopCartContainer</h3>
+    <cartContent></cartContent>
   </div>
 </template>
 
 <script>
+  import cartContent from "../shoppingCart/CartList.vue";
 export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {},
+  components: {
+    // 注册子组件
+    cartContent
+  }
 };
 </script>
 
