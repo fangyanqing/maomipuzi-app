@@ -29,7 +29,7 @@
                                 <span class="price" style="margin-right: 3px">￥{{item.quantity}}</span>
                                 <!-- countObj[item.id] 表示这条商品对应的数量 -->
                                 <cartNoBox></cartNoBox>
-                                <a href="#" style="margin-left: 3px" @click.prevent="deleted">删除</a>
+                                <a href="#" style="margin-left: 3px" @click.prevent="deleted(item.cartId)">删除</a>
                             </div>
                         </div>
                     </div>
@@ -60,6 +60,7 @@
 </template>
 
 <script>
+    import { MessageBox } from 'mint-ui';
     import cartNoBox from "../utit/CartNoBox.vue";
     export default {
         name: "CartList",
@@ -84,17 +85,27 @@
                 }
             },
             deleted(id) {
-                // 删除商品
-                // console.log(id);
-                // 从界面上删除数据
-                this.goodsList.some((item, i) => {
-                    if (item.id == id) {
-                        this.goodsList.splice(i, 1);
-                        return true;
+                console.log(id)
+                MessageBox.confirm('',{
+                    title:'提示',
+                    message:'是否删除',
+                    confirmButtonText:'确定',
+                    cancelButtonText:'取消'
+                }).then(()=> {
+                    const {data} = this.$http.delete("http://localhost:8086/cartInfo/deleted/" + id);
+                    if (data.code === 200) {
+                        MessageBox('提示', '取消成功')
+                        this.getCartListByPage();
+                    } else {
+                        MessageBox('提示','取消收藏失败')
+                        this.getCartListByPage();
                     }
-                });
-                // 从 vuex 中删除数据
-                // this.delFromCart(id);
+                }).catch(error=>{
+                    if(error=='cancel'){
+                        MessageBox('提示','点击取消')
+                    }
+                })
+
             },
             toPay(){
                 this.$router.push("/payment")
